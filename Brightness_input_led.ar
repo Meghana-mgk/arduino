@@ -1,0 +1,17 @@
+nt pin=4;
+
+void setup()
+{
+  pinMode(pin, OUTPUT);
+  Serial.begin(9600);
+  Serial.print("Enter value of brightness");
+}
+
+void loop()
+{
+    if(Serial.available())
+       {
+        int a=Serial.parseInt();
+        analogWrite(pin, a);
+      }
+}
