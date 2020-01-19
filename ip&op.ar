@@ -1,0 +1,20 @@
+int ip=2;
+int op=13;
+
+void setup()
+{
+  pinMode(ip, INPUT);
+  pinMode(op, OUTPUT);
+}
+
+void loop()
+{
+    int a=digitalRead(ip);
+
+    if (a==0)
+      digitalWrite(op, LOW);
+
+    
+    if (a==1)
+      digitalWrite(op, HIGH);
+}
