@@ -1,0 +1,29 @@
+int pin=4;
+
+void setup()
+{
+  pinMode(pin, OUTPUT);
+  Serial.begin(9600);
+  Serial.print("Enter 1 for on and 0 for off");
+}
+
+void loop()
+{
+    if(Serial.available())
+       {
+        int a=Serial.parseInt();
+       
+
+        if (a==1)
+            {
+              digitalWrite(pin, HIGH);
+              Serial.println("LED turned on");
+            }
+
+        if (a==2)
+            {
+              digitalWrite(pin, LOW);
+              Serial.println("LED turned off");
+            }
+      }
+}
