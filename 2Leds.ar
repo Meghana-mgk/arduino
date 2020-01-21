@@ -1,0 +1,32 @@
+const int led1=4;
+const int led2=6;
+
+void setup()
+{
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  Serial.begin(9600);
+  Serial.println("Enter 1 for led 1 and 2 for led 2");
+}
+
+void loop()
+{
+  int a;
+  if(Serial.available())
+  {
+      
+      a=Serial.parseInt();
+
+      if (a==1)
+          {
+            digitalWrite(led1, HIGH);
+            digitalWrite(led2, LOW);
+          }
+          
+      else if (a==2)
+          {
+            digitalWrite(led1, LOW);
+            digitalWrite(led2, HIGH);
+          }
+   } 
+}
